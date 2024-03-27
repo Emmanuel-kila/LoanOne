@@ -66,3 +66,29 @@
   overflow-y: auto;
 }
 
+
+
+
+@media (max-width: 992px) {
+    .container-big {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .vertical-menu, #ln1SubButtons {
+        display: none; /* Hide vertical menu and buttons */
+    }
+
+    #ln1SubContent {
+        width: 100%; /* Full width for content */
+    }
+}
+
+/* Responsive styling for small-sized screens */
+@media (max-width: 768px) {
+    .container-big {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+

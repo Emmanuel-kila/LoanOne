@@ -12,11 +12,14 @@
 <script src="js/additional-methods.min.js" type="text/javascript"></script>
 <script src="js/popper.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
  <!-- Bootstrap -->
 <link href="css/bootstrap-5.2.3.css" rel="stylesheet">
 <link rel="shortcut icon" href="./favicon.ico"/>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <link href="css/style-navbar.css" rel="stylesheet">
+
 
 <script type="text/javascript">
 
@@ -98,6 +101,32 @@ var curMod = null;
 			doMessage("Closed the module first");
 		}
 	}
+	
+	function logout()
+  	{
+			
+		$.ajax({		 				
+				url : 'Loan1Ctrl',
+				type: 'POST',
+				data : {"uid": <%=session.getAttribute("uid")%>, "moduleid": 3},
+				dataType: 'JSON',
+		
+				success:function(data)
+				{
+					window.location.reload();
+					
+					//$('#ln1Footer').html("Invalid Credentials") 
+					//openModule('welcome.jsp');
+				}					
+ 			}).fail(function (errorobj, textstatus, error) { 
+ 				var responseText = errorobj.responseText.trim() ;
+ 				//alert("Ingia hapa"+responseText)
+ 				$('#ln1Footer').html(responseText);
+ 				window.location.reload();
+ 			});  			
+  			
+  	}
+	
 //});
 
 </script>	
@@ -170,7 +199,7 @@ if(session.getAttribute("uname")==null){
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="#" class="download">Log out</a>
+                    <a href="#" class="download" onClick = "logout()">Log out</a>
                 </li>
             </ul>
         </nav>

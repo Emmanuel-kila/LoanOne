@@ -1,15 +1,15 @@
 package entity;
 
 
-class Person {
+public class Person {
 	
 	private int pid;
-    private int type_id; 
+    private short type_id; 
     private String firstname;
     private String middlename;
     private String othername;
     private String email;
-    private java.util.Date dob;
+    private java.sql.Date dob;
     private String phone;
     private String address;
     private String idnumber;
@@ -30,7 +30,7 @@ class Person {
 	public int getType_id() {
 		return type_id;
 	}
-	public void setType_id(int type_id) {
+	public void setType_id(short type_id) {
 		this.type_id = type_id;
 	}
 	public String getFirstname() {
@@ -60,7 +60,7 @@ class Person {
 	public java.util.Date getDob() {
 		return dob;
 	}
-	public void setDob(java.util.Date dob) {
+	public void setDob(java.sql.Date dob) {
 		this.dob = dob;
 	}
 	public String getPhone() {
