@@ -61,7 +61,7 @@ function getClients() {
 
 <div class="card">
     <div class="card-header">
-        Borrower Information
+        Client Information
     </div>
     <div id="tblclients" class="card-body">
         <h5 class="card-title">Client details</h5>
